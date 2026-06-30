@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Entity\Book" repository-class="App\Repository\BookRepository">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="serialNumber" column="serial_number" type="string" length="6" unique="true" nullable="false"/>
+        <field name="title" column="title" type="string" length="255" nullable="false"/>
+        <field name="author" column="author" type="string" length="255" nullable="false"/>
+        <field name="isBorrowed" column="is_borrowed" type="boolean" nullable="false"/>
+        <field name="borrowedAt" column="borrowed_at" type="datetime" nullable="true"/>
+        <field name="borrowedBy" column="borrowed_by" type="string" length="6" nullable="true"/>
+    </entity>
+</doctrine-mapping>

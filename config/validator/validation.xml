@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="App\Entity\Book">
+        <property name="serialNumber">
+            <constraint name="NotBlank"/>
+            <constraint name="Length">
+                <option name="exactly">6</option>
+            </constraint>
+            <constraint name="Regex">
+                <option name="pattern">/^\d{6}$/</option>
+                <option name="message">Serial number must be exactly 6 digits</option>
+            </constraint>
+        </property>
+
+        <property name="title">
+            <constraint name="NotBlank"/>
+        </property>
+
+        <property name="author">
+            <constraint name="NotBlank"/>
+        </property>
+
+        <property name="borrowedBy">
+            <constraint name="Length">
+                <option name="exactly">6</option>
+            </constraint>
+            <constraint name="Regex">
+                <option name="pattern">/^\d{6}$/</option>
+                <option name="message">Library card number must be exactly 6 digits</option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

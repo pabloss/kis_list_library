@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping
+                                https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd">
+
+    <class name="App\Entity\Book">
+        <attribute name="id">
+            <group>book:read</group>
+        </attribute>
+        <attribute name="serialNumber">
+            <group>book:read</group>
+            <group>book:write</group>
+        </attribute>
+        <attribute name="title">
+            <group>book:read</group>
+            <group>book:write</group>
+        </attribute>
+        <attribute name="author">
+            <group>book:read</group>
+            <group>book:write</group>
+        </attribute>
+        <attribute name="isBorrowed">
+            <group>book:read</group>
+        </attribute>
+        <attribute name="borrowedAt">
+            <group>book:read</group>
+        </attribute>
+        <attribute name="borrowedBy">
+            <group>book:read</group>
+        </attribute>
+    </class>
+</serializer>
